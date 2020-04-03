@@ -1,0 +1,43 @@
+<div class="row m-0" style="min-height: 100vh;">
+  <div class="col-md-8 py-4">
+    <div class="container">
+      <h4 class="text-center font-weight-bold my-2"><span class="text-red-primary">Lissajous</span> Curve.</h4>
+      <br>
+      <div class="text-secondary">
+        Named after Jules Antoine Lissajous, a Lissajous curve, also known as Lissajous figure or Bowditch curve, is the graph of a system of parametric equations,
+        <pre class="my-2">x = Asin(at), y = Bsin(bt)</pre>
+        which describe complex harmonic motion. This family of curves was investigated by Nathaniel Bowditch in 1815, and later in more detail by Jules Antoine Lissajous in 1857.
+      </div>
+      <br>
+      <div class="card card-body border-0 shadow-sm bg-light">
+        {{x}} <br> {{y}}
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4 py-4 bg-red-secondary shadow-sm">
+    <div class="d-none d-md-block">
+      <h4 class="text-red-secondary my-2">Hidden</h4>
+      <br>
+    </div>
+    <div class="container">
+      <p class="text-secondary text-sm">PARAMETERS</p>
+      <div class="form-group">
+        <label>A : <span class="font-weight-bold">{{A}}</span></label>
+        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="A" (change)="simulate()">
+      </div>
+      <div class="form-group">
+        <label>a : <span class="font-weight-bold">{{a}}</span></label>
+        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="a" (change)="simulate()">
+      </div>
+      <div class="form-group">
+        <label>B : <span class="font-weight-bold">{{B}}</span></label>
+        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="B" (change)="simulate()">
+      </div>
+      <div class="form-group">
+        <label>b : <span class="font-weight-bold">{{b}}</span></label>
+        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="b" (change)="simulate()">
+      </div>
+    </div>
+  </div>
+</div>
