@@ -5,7 +5,7 @@
       <br>
       <div class="text-secondary">
         Lissajous curve is the graph of a system of following parametric equations which describe complex harmonic motion.
-        <pre class="mt-2 text-center">x = Asin(at), y = Bsin(bt)</pre>
+        <pre class="mt-2 text-center">x = Asin(at + ϕ), y = Bsin(bt)</pre>
       </div>
       <div class="card card-body shadow-sm bg-light">
         <div class="text-sm text-secondary">GRAPH</div>
@@ -41,6 +41,10 @@
       <div class="form-group">
         <label>b : <span class="font-weight-bold">{{b}}</span></label>
         <input type="range" class="custom-range" min="-10" max="10" [ngModel]="b" (change)="b=$event.target.value;simulate()">
+      </div>
+      <div class="form-group">
+        <label>ϕ : <span class="font-weight-bold">{{c}} π</span></label>
+        <input type="range" class="custom-range" min="0" max="1" step="0.01" [ngModel]="c" (change)="c=$event.target.value;simulate()">
       </div>
     </div>
   </div>

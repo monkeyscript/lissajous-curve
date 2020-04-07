@@ -18,6 +18,7 @@ export class AppComponent implements AfterViewInit {
   a: number = 6;
   B: number = 10;
   b: number = 5;
+  c:number=0;
   t: number = 0;
 
   // Result 
@@ -63,7 +64,7 @@ export class AppComponent implements AfterViewInit {
       // Start simulation 
       this.simulate()
 
-    }, 5000);
+    }, 2000);
 
 
   }
@@ -87,7 +88,7 @@ export class AppComponent implements AfterViewInit {
     this.timer = setInterval(() => {
 
       // Calculate x and y 
-      this.x = this.A * Math.sin((this.a * this.t))
+      this.x = this.A * Math.sin((this.a * this.t) + (this.c*Math.PI))
       this.y = this.B * Math.sin((this.b * this.t))
 
       // Mark point 
@@ -105,7 +106,7 @@ export class AppComponent implements AfterViewInit {
   //
   strokePoint(x: number, y: number) {
 
-    var pointSize = 2;
+    var pointSize = 1;
     this.ctx.fillStyle = "#ff6e6e";
 
     // Start path 
