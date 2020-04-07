@@ -15,9 +15,9 @@ export class AppComponent implements AfterViewInit {
 
   // Parameters 
   A: number = 10;
-  a: number = 1;
+  a: number = 6;
   B: number = 10;
-  b: number = 2;
+  b: number = 5;
   t: number = 0;
 
   // Result 
@@ -38,17 +38,23 @@ export class AppComponent implements AfterViewInit {
   // Canvas dimension
   canvasDimension: number;
 
+  // Class for loader
+  loaderClass: string = 'd-block';
+
   ngAfterViewInit() {
 
     // Get the context 
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.ctx = canvasEl.getContext('2d');
 
+    // Wait till canvas render 
     setTimeout(() => {
+
+      // Hide loader
+      this.loaderClass = 'd-none';
 
       // Get offset width
       this.canvasDimension = canvasEl.offsetWidth;
-      console.log(this.canvasDimension, canvasEl.width)
 
       // Update height and width
       canvasEl.width = this.canvasDimension;
@@ -62,6 +68,9 @@ export class AppComponent implements AfterViewInit {
 
   }
 
+  //
+  // Start simulation
+  //
   simulate() {
 
     // Init 
@@ -70,7 +79,7 @@ export class AppComponent implements AfterViewInit {
     this.y = 0;
 
     // Clear canvas
-    this.ctx.clearRect(0,0,this.canvasDimension,this.canvasDimension)
+    this.ctx.clearRect(0, 0, this.canvasDimension, this.canvasDimension)
 
     // Stop timer 
     clearInterval(this.timer)
@@ -85,21 +94,26 @@ export class AppComponent implements AfterViewInit {
       this.strokePoint(this.x, this.y);
 
       // Increement time 
-      this.t++;
+      this.t += 0.01;
 
-    }, 100);
+    }, 10);
 
   }
 
+  //
+  // Stroke a point by coordinates
+  //
   strokePoint(x: number, y: number) {
 
-    var pointSize = 2; // Change according to the size of the point.
+    var pointSize = 2;
+    this.ctx.fillStyle = "#ff6e6e";
 
-    this.ctx.fillStyle = "#ff2626"; // Red color
-
-    this.ctx.beginPath(); //Start path
-    this.ctx.arc((this.canvasDimension / 2) + (x * 10), (this.canvasDimension / 2) - (y * 10), pointSize, 0, Math.PI * 2, true); // Draw a point using the arc function of the canvas with a point structure.
-    this.ctx.fill(); // Close the path and fill.
+    // Start path 
+    this.ctx.beginPath();
+    // Draw circle
+    this.ctx.arc((this.canvasDimension / 2) + (x * 10), (this.canvasDimension / 2) - (y * 10), pointSize, 0, Math.PI * 2, true);
+    // Fill circle
+    this.ctx.fill();
 
   }
 

@@ -28,13 +28,13 @@
 }
 
 .custom-range::-webkit-slider-thumb {
-    background: #ff6e6e;
+    background: #ff6e6e !important;
 }
   
 .custom-range::-moz-range-thumb {
-    background: #ff6e6e;
+    background: #ff6e6e !important;
 }
 
 .custom-range::-ms-thumb {
-    background: #ff6e6e;
+    background: #ff6e6e !important;
 }

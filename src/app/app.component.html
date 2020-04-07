@@ -1,18 +1,20 @@
 <div class="row m-0" style="min-height: 100vh;">
   <div class="col-md-8 py-4">
     <div class="container">
-      <h4 class="text-center font-weight-bold my-2"><span class="text-red-primary">Lissajous</span> Curve.</h4>
-      <!-- <br>
+      <h4 class="text-center font-weight-bold mt-2 mb-0"><span class="text-red-primary">Lissajous</span> Curve.</h4>
+      <br>
       <div class="text-secondary">
-        Named after Jules Antoine Lissajous, a Lissajous curve, also known as Lissajous figure or Bowditch curve, is the graph of a system of parametric equations,
-        <pre class="my-2">x = Asin(at), y = Bsin(bt)</pre>
-        which describe complex harmonic motion. This family of curves was investigated by Nathaniel Bowditch in 1815, and later in more detail by Jules Antoine Lissajous in 1857.
+        Lissajous curve is the graph of a system of following parametric equations which describe complex harmonic motion.
+        <pre class="mt-2 text-center">x = Asin(at), y = Bsin(bt)</pre>
       </div>
-      <br> -->
-      <div class="card card-body border-0 shadow-sm bg-light">
-        {{x}} <br> {{y}}
-        <br>
-        <canvas #canvas></canvas>
+      <div class="card card-body shadow-sm bg-light">
+        <div class="text-sm text-secondary">GRAPH</div>
+        <div class="text-center m-4" [ngClass]="loaderClass">
+          <div class="spinner-border text-red-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <canvas #canvas height="0"></canvas>
       </div>
     </div>
 
@@ -26,19 +28,19 @@
       <p class="text-secondary text-sm">PARAMETERS</p>
       <div class="form-group">
         <label>A : <span class="font-weight-bold">{{A}}</span></label>
-        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="A" (change)="simulate()">
+        <input type="range" class="custom-range" min="-10" max="10" [ngModel]="A" (change)="A=$event.target.value;simulate()">
       </div>
       <div class="form-group">
         <label>a : <span class="font-weight-bold">{{a}}</span></label>
-        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="a" (change)="simulate()">
+        <input type="range" class="custom-range" min="-10" max="10" [ngModel]="a" (change)="a=$event.target.value;simulate()">
       </div>
       <div class="form-group">
         <label>B : <span class="font-weight-bold">{{B}}</span></label>
-        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="B" (change)="simulate()">
+        <input type="range" class="custom-range" min="-10" max="10" [ngModel]="B" (change)="B=$event.target.value;simulate()">
       </div>
       <div class="form-group">
         <label>b : <span class="font-weight-bold">{{b}}</span></label>
-        <input type="range" class="custom-range" min="-10" max="10" [(ngModel)]="b" (change)="simulate()">
+        <input type="range" class="custom-range" min="-10" max="10" [ngModel]="b" (change)="b=$event.target.value;simulate()">
       </div>
     </div>
   </div>
