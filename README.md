@@ -1,10 +1,13 @@
 # Lissajous Curve
 
-Lissajous curve is the graph of a system of following parametric equations which describe complex harmonic motion. [https://monkeyscript.github.io/cellular-automata/](https://monkeyscript.github.io/cellular-automata/)
+Lissajous curve is the graph of a system of following parametric equations which describe complex harmonic motion.
 
+`x = Asin(at + ϕ), y = Bsin(bt)`
 
-Wiki : [https://en.wikipedia.org/wiki/Langton's_ant](https://en.wikipedia.org/wiki/Langton's_ant)
+It was studied by Nathaniel Bowditch, an American mathematician in 1815 and later in detail by Jules Antoine Lissajous, a French physicist in 1857.
 
-Rules : 
-- At a white square, turn 90° right, flip the color of the square, move forward one unit.
-- At a black square, turn 90° left, flip the color of the square, move forward one unit.
+Simulator : [https://monkeyscript.github.io/lissajous-curve/](https://monkeyscript.github.io/lissajous-curve/)
+
+Wiki : [https://en.wikipedia.org/wiki/Lissajous_curve](https://en.wikipedia.org/wiki/Lissajous_curve)
+
+All the parameters can be tuned and the simulator plots 100 points per second with varying `t` value.
