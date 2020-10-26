@@ -29,9 +29,7 @@ export class AppComponent implements AfterViewInit {
   timer: any
 
   // Canvas element reference 
-  @ViewChild('canvas', {
-    static: false
-  }) public canvas: ElementRef;
+  @ViewChild('canvas') public canvas: ElementRef;
 
   // Canvas context var
   private ctx: CanvasRenderingContext2D;
